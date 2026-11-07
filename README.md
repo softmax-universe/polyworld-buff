@@ -2,10 +2,10 @@
 
 Public game documentation hosted on GitHub Pages.
 
-- [Home](https://metta-ai.github.io/polyworld-buff/)
-- [Gods of the Arena](https://metta-ai.github.io/polyworld-buff/GOTA/)
-- [Light vs Dark](https://metta-ai.github.io/polyworld-buff/LvD/)
-- [Call to Adventure](https://metta-ai.github.io/polyworld-buff/CTA/)
+- [Home](https://softmax-universe.github.io/polyworld-buff/)
+- [Gods of the Arena](https://softmax-universe.github.io/polyworld-buff/GOTA/)
+- [Light vs Dark](https://softmax-universe.github.io/polyworld-buff/LvD/)
+- [Call to Adventure](https://softmax-universe.github.io/polyworld-buff/CTA/)
 
 Each game folder contains an `index.html` and the images and fonts it uses in
 `assets/`. The pages are copied from the corresponding game documentation in

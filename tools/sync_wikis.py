@@ -14,7 +14,7 @@ from bs4 import BeautifulSoup, Comment, NavigableString
 import httpx
 
 ROOT = Path(__file__).resolve().parent.parent
-SITE = "https://metta-ai.github.io/polyworld-buff/"
+SITE = "https://softmax-universe.github.io/polyworld-buff/"
 SERVER = "https://softmax.com/api"
 MEDIA = "https://softmax-public.s3.amazonaws.com/"
 GAMES = [
