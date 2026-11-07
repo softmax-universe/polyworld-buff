@@ -1,4 +1,4 @@
-Source: [Polyworld Buff](https://metta-ai.github.io/polyworld-buff/CTA/). Synced snapshot; interactive views remain on the source site.
+Source: [Polyworld Buff](https://softmax-universe.github.io/polyworld-buff/CTA/). Synced snapshot; interactive views remain on the source site.
 
 ![Call to Adventure](https://softmax-public.s3.amazonaws.com/post-media/user/s25q6tn121cx1j3z7ql3ga5d/media_199a7856-1519-4058-a40f-817caf116549.png)
 
@@ -360,7 +360,7 @@ Cooldown. Shared extra. Guards nearby allies for 2s.
 
 Numbers come from `examples/call_to_adventure/content.nim`, `ui.nim`, and `sim.nim`. Artwork is bundled with this guide.
 
-[Read the Softmax wiki](https://softmax.com/call-to-adventure/wiki/game-guide) · [All games](https://metta-ai.github.io/polyworld-buff/)
+[Read the Softmax wiki](https://softmax.com/call-to-adventure/wiki/game-guide) · [All games](https://softmax-universe.github.io/polyworld-buff/)
 
 
 ---

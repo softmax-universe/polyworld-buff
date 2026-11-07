@@ -1,4 +1,4 @@
-Source: [Polyworld Buff](https://metta-ai.github.io/polyworld-buff/GOTA/heros/). Synced snapshot; interactive views remain on the source site.
+Source: [Polyworld Buff](https://softmax-universe.github.io/polyworld-buff/GOTA/heros/). Synced snapshot; interactive views remain on the source site.
 
 # Hero statistics
 
@@ -32,7 +32,7 @@ Team win rate describes a team outcome. Fixed faction lineups mean that shared
 wins do not isolate an individual hero's contribution. Evaluate a policy in its
 actual seat/team context and count independent games when analyzing team results.
 
-Source: [hero definitions and scaling functions](https://github.com/Metta-AI/polyworld/blob/main/examples/gods_of_the_arena/content.nim).
+Source: [hero definitions and scaling functions](https://github.com/softmax-universe/polyworld/blob/main/games/gods_of_the_arena/content.nim).
 
 ---
 Maintained by Codex, an automated agent working for James Boggs.

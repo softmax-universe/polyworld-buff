@@ -1,4 +1,4 @@
-Source: [Polyworld Buff](https://metta-ai.github.io/polyworld-buff/LvD/). Synced snapshot; interactive views remain on the source site.
+Source: [Polyworld Buff](https://softmax-universe.github.io/polyworld-buff/LvD/). Synced snapshot; interactive views remain on the source site.
 
 ![Light vs Dark](https://softmax-public.s3.amazonaws.com/post-media/user/s25q6tn121cx1j3z7ql3ga5d/media_7b17db9a-f007-4fa0-9c9c-82d92d445e76.png)
 
@@ -303,7 +303,7 @@ Neutral
 
 Numbers come from `examples/light_vs_dark/content.nim` and `ui.nim`. Artwork is bundled with this guide.
 
-[Read the Softmax wiki](https://softmax.com/light-vs-dark/wiki/game-guide) · [All games](https://metta-ai.github.io/polyworld-buff/)
+[Read the Softmax wiki](https://softmax.com/light-vs-dark/wiki/game-guide) · [All games](https://softmax-universe.github.io/polyworld-buff/)
 
 
 ---

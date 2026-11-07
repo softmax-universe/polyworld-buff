@@ -3,7 +3,9 @@ import
   layouts
 
 const
-  SiteUrl = "https://metta-ai.github.io/polyworld-buff/"
+  SiteUrl = "https://softmax-universe.github.io/polyworld-buff/"
+  # Standalone reports generated before the rename can contain this link.
+  LegacyGuideUrl = "https://metta-ai.github.io/polyworld-buff/GOTA/"
   ChartAssets = ["progression.css", "progression.js"]
   ChartSection = "<section id=\"hero-progression\" " &
     "aria-label=\"Hero progression\"></section>"
@@ -37,7 +39,7 @@ proc styleHeroReport*(html: string, standalone = false): string =
     raise newException(HeroReportError, "Cannot find hero report content")
   result = result[0 ..< position] & ChartSection & "\n    " &
     result[position .. ^1]
-  for link in ["index.html", "../index.html", SiteUrl & "GOTA/"]:
+  for link in ["index.html", "../index.html", SiteUrl & "GOTA/", LegacyGuideUrl]:
     result = result.replace(
       "<a href=\"" & link & "\">GOTA guide</a> · ", ""
     )

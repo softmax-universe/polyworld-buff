@@ -19,7 +19,7 @@ multiple heroes on the same team do not provide independent team outcomes.
 See [mechanics](https://softmax.com/gods-of-the-arena/wiki/mechanics) for scoring and [hero statistics](https://softmax.com/gods-of-the-arena/wiki/hero-statistics)
 for character attributes.
 
-Sources: [game scoring](https://github.com/Metta-AI/polyworld/blob/main/examples/gods_of_the_arena/sim.nim),
+Sources: [game scoring](https://github.com/softmax-universe/polyworld/blob/main/games/gods_of_the_arena/sim.nim),
 [Softmax documentation](https://docs.softmax.com).
 
 ---

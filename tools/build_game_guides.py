@@ -9,9 +9,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATE = '29 September 2026'
-POLYWORLD = 'https://github.com/Metta-AI/polyworld/blob/main/examples/'
-PUDGE = 'https://github.com/Metta-AI/polyworld-pudge-wars/blob/main/'
-PAINTBOT = 'https://github.com/Metta-AI/paintbot-pw/blob/main/'
+POLYWORLD = 'https://github.com/softmax-universe/polyworld/blob/main/games/'
+AWM_SOURCE = (
+    'https://github.com/softmax-universe/polyworld/blob/'
+    '46e74720543e6b6d17e6aa05680d744c5302fc59/examples/awm/'
+)
+PUDGE = 'https://github.com/softmax-universe/polyworld-pudge-wars/blob/main/'
+PAINTBOT = 'https://github.com/softmax-universe/paintbot-pw/blob/main/'
 
 
 def table(headers, rows, wide=False):
@@ -222,8 +226,8 @@ def awm():
          section('combat', 'Turns & combat', combat, 'attack'), section('archer', 'Archer cards', archer, 'range'),
          section('warrior', 'Warrior cards', warrior, 'damage'), section('mage', 'Mage cards', mage, 'mana'),
          section('tokens', 'Summoned tokens', tokens, 'minion'), section('tips', 'Strategy notes', tips)],
-        [('Card definitions & deck lists', POLYWORLD + 'awm/baseset.nim'), ('Turn & victory rules', POLYWORLD + 'awm/awmsim.nim'),
-         ('Rules engine', POLYWORLD + 'awm/awmcore.nim')], '#e2c597', landscape=True)
+        [('Card definitions & deck lists', AWM_SOURCE + 'baseset.nim'), ('Turn & victory rules', AWM_SOURCE + 'awmsim.nim'),
+         ('Rules engine', AWM_SOURCE + 'awmcore.nim')], '#e2c597', landscape=True)
 
 
 def pudge():
@@ -407,7 +411,7 @@ def home():
     <h1>Polyworld Buff</h1><p>Explore the games. Learn the characters, cards,
     abilities, and rules. Pick a guide to get started.</p></header>
   <nav class="games" aria-label="Game guides">{cards}</nav>
-  <footer><p><a href="https://github.com/Metta-AI/polyworld-buff">View on GitHub</a></p></footer>
+  <footer><p><a href="https://github.com/softmax-universe/polyworld-buff">View on GitHub</a></p></footer>
 </main></body></html>
 ''')
 
