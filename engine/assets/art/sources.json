@@ -1,0 +1,582 @@
+{
+  "repository": "https://github.com/softmax-universe/polyworld_art",
+  "displaySize": 64,
+  "assets": [
+    {
+      "file": "character-arcanist.png",
+      "label": "Arcanist \u2014 character",
+      "category": "Character",
+      "source": "characters/chargen/portraits/arcanist.profile.png",
+      "license": "CC0-1.0",
+      "sha256": "c2ee4a07867bc3455f0b6a07e4a2e2b10a4f481be4361173fd3881b57df854e7",
+      "modified": false
+    },
+    {
+      "file": "character-vanguard-knight.png",
+      "label": "Vanguard knight \u2014 character",
+      "category": "Character",
+      "source": "characters/chargen/portraits/vanguard_knight.profile.png",
+      "license": "CC0-1.0",
+      "sha256": "9df6974eb24b52af5eb54e3850eefc2e15d3cc92b80bfa88ca570e72b54f95d8",
+      "modified": false
+    },
+    {
+      "file": "character-ranger.png",
+      "label": "Ranger \u2014 character",
+      "category": "Character",
+      "source": "characters/chargen/portraits/ranger.profile.png",
+      "license": "CC0-1.0",
+      "sha256": "3e503b4a9637bce6355474c29d04ddbef3786ad8dd20c9ca9fcd2bc74addf043",
+      "modified": false
+    },
+    {
+      "file": "character-druid-warden.png",
+      "label": "Druid warden \u2014 character",
+      "category": "Character",
+      "source": "characters/chargen/portraits/druid_warden.profile.png",
+      "license": "CC0-1.0",
+      "sha256": "03ca4b5b5475995ea3c241c3c08df16877fadce48a93e5e49ab232ed9aac6237",
+      "modified": false
+    },
+    {
+      "file": "character-berserker.png",
+      "label": "Berserker \u2014 character",
+      "category": "Character",
+      "source": "characters/chargen/portraits/berserker.profile.png",
+      "license": "CC0-1.0",
+      "sha256": "9e9fe1c814238db5b1ff4b4807ec5664b3bfac2ac02c0f5ed366f631a92f297a",
+      "modified": false
+    },
+    {
+      "file": "character-crossbowman.png",
+      "label": "Crossbowman \u2014 character",
+      "category": "Character",
+      "source": "characters/chargen/portraits/crossbowman.profile.png",
+      "license": "CC0-1.0",
+      "sha256": "5177e07c69ed07dea7975f47c3301839e18ae83f7c5935be0df5d2adb7707af3",
+      "modified": false
+    },
+    {
+      "file": "character-demon-hunter.png",
+      "label": "Demon hunter \u2014 character",
+      "category": "Character",
+      "source": "characters/chargen/portraits/demon_hunter.profile.png",
+      "license": "CC0-1.0",
+      "sha256": "a12f78c8e645a21766a4cf7e7ce6d5b7faab836c309b920222de78f45a7cd8bc",
+      "modified": false
+    },
+    {
+      "file": "character-death-knight.png",
+      "label": "Death knight \u2014 character",
+      "category": "Character",
+      "source": "characters/chargen/portraits/death_knight.profile.png",
+      "license": "CC0-1.0",
+      "sha256": "b2d87b6abe5dd8902f3958969765dbaf5546c7a07f28b94bff2ccbb9f3319439",
+      "modified": false
+    },
+    {
+      "file": "character-warlock.png",
+      "label": "Warlock \u2014 character",
+      "category": "Character",
+      "source": "characters/chargen/portraits/warlock.profile.png",
+      "license": "CC0-1.0",
+      "sha256": "945fad9ae48ec4bc651bd81fb66844fa4e3d6687c5af19d28bb9a15cc15da7dc",
+      "modified": false
+    },
+    {
+      "file": "character-lich.png",
+      "label": "Lich \u2014 character",
+      "category": "Character",
+      "source": "characters/chargen/portraits/lich.profile.png",
+      "license": "CC0-1.0",
+      "sha256": "e66c358068a80c75e543dff1742fa005cd00535bf42f12f0f17208e156d9e0f0",
+      "modified": false
+    },
+    {
+      "file": "building-town-hall.png",
+      "label": "Town hall \u2014 building",
+      "category": "Building",
+      "source": "terrain/lvd_buildings/portraits/town_hall.png",
+      "license": "CC0-1.0",
+      "sha256": "792076baf0b2eeb73c04f7225acf61f165c8ab9e9eb3335aded3e1d674972ac1",
+      "modified": false
+    },
+    {
+      "file": "building-barracks.png",
+      "label": "Barracks \u2014 building",
+      "category": "Building",
+      "source": "terrain/lvd_buildings/portraits/barracks.png",
+      "license": "CC0-1.0",
+      "sha256": "9b7013a135e66289341e7aaf67d6ad7b126f9d0001ee862ab5a83cd5baad6b1d",
+      "modified": false
+    },
+    {
+      "file": "building-stables.png",
+      "label": "Stables \u2014 building",
+      "category": "Building",
+      "source": "terrain/lvd_buildings/portraits/stables.png",
+      "license": "CC0-1.0",
+      "sha256": "2fae7d973298976534d269f3d37fffd79950f812ff263989978ac89aed9907f7",
+      "modified": false
+    },
+    {
+      "file": "building-farm.png",
+      "label": "Farm \u2014 building",
+      "category": "Building",
+      "source": "terrain/lvd_buildings/portraits/farm.png",
+      "license": "CC0-1.0",
+      "sha256": "9f533a9fcf16556cd0f3416dc2f00be45453ccd398ebfac1ed651a829eeaf724",
+      "modified": false
+    },
+    {
+      "file": "building-blacksmith.png",
+      "label": "Blacksmith \u2014 building",
+      "category": "Building",
+      "source": "terrain/lvd_buildings/portraits/blacksmith.png",
+      "license": "CC0-1.0",
+      "sha256": "c2a99c18c2378f80d189ae46236106fd2492b5e475b9c4741887238c18194b15",
+      "modified": false
+    },
+    {
+      "file": "building-church.png",
+      "label": "Church \u2014 building",
+      "category": "Building",
+      "source": "terrain/lvd_buildings/portraits/church.png",
+      "license": "CC0-1.0",
+      "sha256": "4f2163a72fd1a4877cd6460aca211c6953423d9ab1b91b2a8cb2b9c3c7951d75",
+      "modified": false
+    },
+    {
+      "file": "building-lumber-mill.png",
+      "label": "Lumber mill \u2014 building",
+      "category": "Building",
+      "source": "terrain/lvd_buildings/portraits/lumber_mill.png",
+      "license": "CC0-1.0",
+      "sha256": "360738610eac247f1ebe977aeee9f77de997fd97c5def8ee47db24faa887dd16",
+      "modified": false
+    },
+    {
+      "file": "building-tower.png",
+      "label": "Tower \u2014 building",
+      "category": "Building",
+      "source": "terrain/lvd_buildings/portraits/tower.png",
+      "license": "CC0-1.0",
+      "sha256": "90bc870cb3a15af4d5c40b618d7d7bb5fab9326eede33ca605b5487e960343df",
+      "modified": false
+    },
+    {
+      "file": "world-prop-light-tree-1.png",
+      "label": "Light tree 1 \u2014 world prop",
+      "category": "World prop",
+      "source": "terrain/blender_forts/previews/light_tree_1.png",
+      "license": "CC0-1.0",
+      "sha256": "a7d4c8f80c0ed5c2ff97ebd8a54deb0db625d0b41c4102ea454146e19e70db51",
+      "modified": false
+    },
+    {
+      "file": "world-prop-light-tree-2.png",
+      "label": "Light tree 2 \u2014 world prop",
+      "category": "World prop",
+      "source": "terrain/blender_forts/previews/light_tree_2.png",
+      "license": "CC0-1.0",
+      "sha256": "cbccb6487fe3d0243a7862a037423abaedab7d4320b29f6f54163c078087e780",
+      "modified": false
+    },
+    {
+      "file": "world-prop-dark-tree-2.png",
+      "label": "Dark tree 2 \u2014 world prop",
+      "category": "World prop",
+      "source": "terrain/blender_forts/previews/dark_tree_2.png",
+      "license": "CC0-1.0",
+      "sha256": "404c4fd2d0d18d1bfbde3c92172e218d05e5f0b275da2705ede4301247b1855d",
+      "modified": false
+    },
+    {
+      "file": "world-prop-light-tower.png",
+      "label": "Light tower \u2014 world prop",
+      "category": "World prop",
+      "source": "terrain/blender_forts/previews/light_tower.png",
+      "license": "CC0-1.0",
+      "sha256": "f46e4b71a64891e18b75a20aa69329fc5f45b9f9661af0d31f5fbe80203f63b1",
+      "modified": false
+    },
+    {
+      "file": "world-prop-dark-barracks.png",
+      "label": "Dark barracks \u2014 world prop",
+      "category": "World prop",
+      "source": "terrain/blender_forts/previews/dark_barracks.png",
+      "license": "CC0-1.0",
+      "sha256": "eb638476d45b9054c647e64b82e6b3a34802774f6c82f71adb0897f6c657e6ac",
+      "modified": false
+    },
+    {
+      "file": "world-prop-light-pillar.png",
+      "label": "Light pillar \u2014 world prop",
+      "category": "World prop",
+      "source": "terrain/blender_forts/previews/light_pillar.png",
+      "license": "CC0-1.0",
+      "sha256": "4436324461fdcf16757714e2eee927b97429eea4f5c7dde53e17458a82cd9ca2",
+      "modified": false
+    },
+    {
+      "file": "ability-fire-phoenix.png",
+      "label": "Fire phoenix \u2014 ability",
+      "category": "Ability",
+      "source": "abilities/fire_phoenix.png",
+      "license": "CC0-1.0",
+      "sha256": "b794b82f5e9ac34734c9bddea77ac84dec77d6f55a44f99d759f846a7ccf2e48",
+      "modified": false
+    },
+    {
+      "file": "ability-meteor-strike.png",
+      "label": "Meteor strike \u2014 ability",
+      "category": "Ability",
+      "source": "abilities/meteor_strike.png",
+      "license": "CC0-1.0",
+      "sha256": "5754474a64d55bb287231cadb7a414907265521b3317223b8ad37afc456ba3ca",
+      "modified": false
+    },
+    {
+      "file": "ability-storm-eagle.png",
+      "label": "Storm eagle \u2014 ability",
+      "category": "Ability",
+      "source": "abilities/storm_eagle.png",
+      "license": "CC0-1.0",
+      "sha256": "7dfe8246a87dff328680f65b7cf2ddd2cfa9cf5d5de85237e001d71eb1df5926",
+      "modified": false
+    },
+    {
+      "file": "ability-gem-hammer.png",
+      "label": "Gem hammer \u2014 ability",
+      "category": "Ability",
+      "source": "abilities/gem_hammer.png",
+      "license": "CC0-1.0",
+      "sha256": "e0d6a5d496c3f074febe2dd342cc3d8ec67cb51d86f638f64877edd9c42d57f7",
+      "modified": false
+    },
+    {
+      "file": "ability-astral-star.png",
+      "label": "Astral star \u2014 ability",
+      "category": "Ability",
+      "source": "abilities/astral_star.png",
+      "license": "CC0-1.0",
+      "sha256": "aa694e92fa06ffb645789159e9f6886a3aa9b437bc05efdb74253c97ef0b402a",
+      "modified": false
+    },
+    {
+      "file": "ability-bone-marionette.png",
+      "label": "Bone marionette \u2014 ability",
+      "category": "Ability",
+      "source": "abilities/bone_marionette.png",
+      "license": "CC0-1.0",
+      "sha256": "1a3116af37e8d9ce182f9638f26b1581c2de7dacc21470aa1e8caee46dcb69ba",
+      "modified": false
+    },
+    {
+      "file": "ability-tidal-vortex.png",
+      "label": "Tidal vortex \u2014 ability",
+      "category": "Ability",
+      "source": "abilities/tidal_vortex.png",
+      "license": "CC0-1.0",
+      "sha256": "1b7db1a524362aa3660f54e3afff4e99874124130a3cca15c8639c7c01a0eee7",
+      "modified": false
+    },
+    {
+      "file": "ability-shadow-cloak.png",
+      "label": "Shadow cloak \u2014 ability",
+      "category": "Ability",
+      "source": "abilities/shadow_cloak.png",
+      "license": "CC0-1.0",
+      "sha256": "de13103b00d59b6251b7c5f29cfd36c5eb5bb9e754828012d6f5c7d902807102",
+      "modified": false
+    },
+    {
+      "file": "ability-thundercloud.png",
+      "label": "Thundercloud \u2014 ability",
+      "category": "Ability",
+      "source": "abilities/thundercloud.png",
+      "license": "CC0-1.0",
+      "sha256": "a1037f6809b8c954588cb249af2fda21c1ead7ed98e6308bc321a5e6b005fee6",
+      "modified": false
+    },
+    {
+      "file": "ability-lightning-storm.png",
+      "label": "Lightning storm \u2014 ability",
+      "category": "Ability",
+      "source": "abilities/lightning_storm.png",
+      "license": "CC0-1.0",
+      "sha256": "42208872dd186e31e7af5395dd32ddcc2db64769497ab1a3f0aacf073c553054",
+      "modified": false
+    },
+    {
+      "file": "ability-crystal-crown.png",
+      "label": "Crystal crown \u2014 ability",
+      "category": "Ability",
+      "source": "abilities/crystal_crown.png",
+      "license": "CC0-1.0",
+      "sha256": "424d00c95e34f46f1487d9c5cc8499b0d3f5dddeb1412db589dc0770760be008",
+      "modified": false
+    },
+    {
+      "file": "ability-verdant-arrow.png",
+      "label": "Verdant arrow \u2014 ability",
+      "category": "Ability",
+      "source": "abilities/verdant_arrow.png",
+      "license": "CC0-1.0",
+      "sha256": "262664b65ad6f675308929f19ad444ba7684f6c51eeab77bf080ed08ba191d7f",
+      "modified": false
+    },
+    {
+      "file": "ability-frost-sigil.png",
+      "label": "Frost sigil \u2014 ability",
+      "category": "Ability",
+      "source": "abilities/frost_sigil.png",
+      "license": "CC0-1.0",
+      "sha256": "1abb67c451dadc3af2bedbed5bf10ef8e53c2a28f0218a882c7aa1706adce2f3",
+      "modified": false
+    },
+    {
+      "file": "ability-venom-dagger.png",
+      "label": "Venom dagger \u2014 ability",
+      "category": "Ability",
+      "source": "abilities/venom_dagger.png",
+      "license": "CC0-1.0",
+      "sha256": "c3562f3e4e58f6471b8c3bc34a5db5dca65e2300505253da7fa5332dfdbe1097",
+      "modified": false
+    },
+    {
+      "file": "ability-stone-armor.png",
+      "label": "Stone armor \u2014 ability",
+      "category": "Ability",
+      "source": "abilities/stone_armor.png",
+      "license": "CC0-1.0",
+      "sha256": "2a8beb86920df7bae894833caceb6f4f44a721f1da7ca0fe62c8f8a5c9506a12",
+      "modified": false
+    },
+    {
+      "file": "ability-arcane-gateway.png",
+      "label": "Arcane gateway \u2014 ability",
+      "category": "Ability",
+      "source": "abilities/arcane_gateway.png",
+      "license": "CC0-1.0",
+      "sha256": "246d08211be6cbc1a23d56fc1b0c6ff03891b5e348c5e9bcf7ca68ea0c1823f4",
+      "modified": false
+    },
+    {
+      "file": "item-sunburst-bolts.png",
+      "label": "Sunburst bolts \u2014 item",
+      "category": "Item",
+      "source": "items/sunburst_bolts.png",
+      "license": "CC0-1.0",
+      "sha256": "bf2367f62fd67baa315ab9b139ca014cf534232ef8dcbf1675bc11ca3f3836d8",
+      "modified": false
+    },
+    {
+      "file": "item-rune-crossbow.png",
+      "label": "Rune crossbow \u2014 item",
+      "category": "Item",
+      "source": "items/rune_crossbow.png",
+      "license": "CC0-1.0",
+      "sha256": "8f910afcc1d14966c36d6274708ce306baac55d425b0c994681efe968c7d5194",
+      "modified": false
+    },
+    {
+      "file": "item-glacier-mace.png",
+      "label": "Glacier mace \u2014 item",
+      "category": "Item",
+      "source": "items/glacier_mace.png",
+      "license": "CC0-1.0",
+      "sha256": "02466a4a244b700e13e214e5686eb1d6fe666850ab5ab9bb2bbd026b4865fac6",
+      "modified": false
+    },
+    {
+      "file": "item-knight-armor.png",
+      "label": "Knight armor \u2014 item",
+      "category": "Item",
+      "source": "items/knight_armor.png",
+      "license": "CC0-1.0",
+      "sha256": "f9b30adeb478dd00050e711b68cc6efbb1da04da6b50a86062b9f41e4bd14028",
+      "modified": false
+    },
+    {
+      "file": "item-thornwood-staff.png",
+      "label": "Thornwood staff \u2014 item",
+      "category": "Item",
+      "source": "items/thornwood_staff.png",
+      "license": "CC0-1.0",
+      "sha256": "b1f9276e170f77e11040722c4ac28be5f1eaf1083b8a746dbbbe8546e7a73afe",
+      "modified": false
+    },
+    {
+      "file": "item-alchemist-mortar.png",
+      "label": "Alchemist mortar \u2014 item",
+      "category": "Item",
+      "source": "items/alchemist_mortar.png",
+      "license": "CC0-1.0",
+      "sha256": "d444b624f972dd43f6d78adc8ecb7c0c0a083ebc4580af27d332c48f07f235d8",
+      "modified": false
+    },
+    {
+      "file": "item-trail-lantern.png",
+      "label": "Trail lantern \u2014 item",
+      "category": "Item",
+      "source": "items/trail_lantern.png",
+      "license": "CC0-1.0",
+      "sha256": "cfc8bb89277cbd44f5750368dea0cc1e721ac59d50e94fdbb043f25448d909dc",
+      "modified": false
+    },
+    {
+      "file": "item-sapphire-ring.png",
+      "label": "Sapphire ring \u2014 item",
+      "category": "Item",
+      "source": "items/sapphire_ring.png",
+      "license": "CC0-1.0",
+      "sha256": "f09935ea627d34a71d8b1e794d935a85e34612288afd32a205f222ac250c5d8d",
+      "modified": false
+    },
+    {
+      "file": "item-poison-potion.png",
+      "label": "Poison potion \u2014 item",
+      "category": "Item",
+      "source": "items/poison_potion.png",
+      "license": "CC0-1.0",
+      "sha256": "cc1bab0a2ddbd81d948abf59dd53934464654e2068af1d2236fb027f2ac087b3",
+      "modified": false
+    },
+    {
+      "file": "item-merchant-coin-purse.png",
+      "label": "Merchant coin purse \u2014 item",
+      "category": "Item",
+      "source": "items/merchant_coin_purse.png",
+      "license": "CC0-1.0",
+      "sha256": "096e87afc342ee5678b3c61f203bcdb8cd8880269c6ef39388b43a684160f0f6",
+      "modified": false
+    },
+    {
+      "file": "item-diamond-swan-statuette.png",
+      "label": "Diamond swan statuette \u2014 item",
+      "category": "Item",
+      "source": "items/diamond_swan_statuette.png",
+      "license": "CC0-1.0",
+      "sha256": "65145565bebcfca3d0fe6af3599fa8d6ff23d1d46e43f48a093b2e6d1e4cc784",
+      "modified": false
+    },
+    {
+      "file": "item-silver-owl-mask.png",
+      "label": "Silver owl mask \u2014 item",
+      "category": "Item",
+      "source": "items/silver_owl_mask.png",
+      "license": "CC0-1.0",
+      "sha256": "97799db7c45455a87a61536dc230baac315afe78212fa597ff05f48c8dfe8495",
+      "modified": false
+    },
+    {
+      "file": "item-arcane-spellbook.png",
+      "label": "Arcane spellbook \u2014 item",
+      "category": "Item",
+      "source": "items/arcane_spellbook.png",
+      "license": "CC0-1.0",
+      "sha256": "25c08132a4b40ed08c8f874720e81f371296a4520d7149f334c9380e166fa4ee",
+      "modified": false
+    },
+    {
+      "file": "item-mana-potion.png",
+      "label": "Mana potion \u2014 item",
+      "category": "Item",
+      "source": "items/mana_potion.png",
+      "license": "CC0-1.0",
+      "sha256": "b3c3ea40c1fa16a5fa550a9ec522bbe27ab6882dfde38d5bb6f30bfedba37e42",
+      "modified": false
+    },
+    {
+      "file": "item-amethyst-crystal.png",
+      "label": "Amethyst crystal \u2014 item",
+      "category": "Item",
+      "source": "items/amethyst_crystal.png",
+      "license": "CC0-1.0",
+      "sha256": "84eadadfaa41226c206839cf485c363d3660f69bfc7bda58ac05a9707edd9393",
+      "modified": false
+    },
+    {
+      "file": "item-thunder-roc-egg.png",
+      "label": "Thunder roc egg \u2014 item",
+      "category": "Item",
+      "source": "items/thunder_roc_egg.png",
+      "license": "CC0-1.0",
+      "sha256": "7c9b0d9e3077032c36ec215a13f2b83a91e229fa593a6d4cefb7d2d9b59c7e06",
+      "modified": false
+    },
+    {
+      "file": "icon-gold.png",
+      "label": "Gold \u2014 icon",
+      "category": "Icon",
+      "source": "icons/gold.png",
+      "license": "CC0-1.0",
+      "sha256": "e125554736f2cc310db42adebd17f62bdb93b36e2b816b783d7636dc0fb82125",
+      "modified": false
+    },
+    {
+      "file": "icon-axe.png",
+      "label": "Axe \u2014 icon",
+      "category": "Icon",
+      "source": "icons/axe.png",
+      "license": "CC0-1.0",
+      "sha256": "c634850ac9efdfd9bee63085ec2e92c9315b6c20efcb031d62be3f474a11ad9d",
+      "modified": false
+    },
+    {
+      "file": "icon-shrine.png",
+      "label": "Shrine \u2014 icon",
+      "category": "Icon",
+      "source": "icons/shrine.png",
+      "license": "CC0-1.0",
+      "sha256": "055b26becd0aec083ffe98bbf8c4a57fa3118bc44ae80e3b18acd7170bc8f80d",
+      "modified": false
+    },
+    {
+      "file": "icon-tower.png",
+      "label": "Tower \u2014 icon",
+      "category": "Icon",
+      "source": "icons/tower.png",
+      "license": "CC0-1.0",
+      "sha256": "8c6630535adac1c124a5172c38ff260ce5289b38119d4e705d80f11980ead989",
+      "modified": false
+    },
+    {
+      "file": "icon-treasure-chest.png",
+      "label": "Treasure chest \u2014 icon",
+      "category": "Icon",
+      "source": "icons/treasure_chest.png",
+      "license": "CC0-1.0",
+      "sha256": "5dbc64e6d0707dc0dbfe26f900527135c2f225d7dbf0aa9e44b97c63c355f57f",
+      "modified": false
+    },
+    {
+      "file": "icon-crystal.png",
+      "label": "Crystal \u2014 icon",
+      "category": "Icon",
+      "source": "icons/crystal.png",
+      "license": "CC0-1.0",
+      "sha256": "8bd8726f033262499d8405a967f181ca8b3c8938694309c1bd4c6d657bba4f2a",
+      "modified": false
+    },
+    {
+      "file": "icon-leaf.png",
+      "label": "Leaf \u2014 icon",
+      "category": "Icon",
+      "source": "icons/leaf.png",
+      "license": "CC0-1.0",
+      "sha256": "a04c02a13d28fe4027e89304a653732290228143eb9404ceaf30fef4980fd07d",
+      "modified": false
+    },
+    {
+      "file": "icon-lightning.png",
+      "label": "Lightning \u2014 icon",
+      "category": "Icon",
+      "source": "icons/lightning.png",
+      "license": "CC0-1.0",
+      "sha256": "8b6518845ebda02ea203a96372c684a8a1373aa5c589bee9902b6d6dc285538f",
+      "modified": false
+    }
+  ]
+}

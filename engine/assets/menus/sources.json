@@ -1,0 +1,44 @@
+{
+  "game": "Gods of the Arena",
+  "captureDate": "2026-11-09",
+  "source": "/Users/me/p/gameshowcase/public/games/gota/play/index.html",
+  "buildVersion": "2026.11.06-global-tooltip-silky-death",
+  "sourceRevision": "f35ffb92e222c9aa1615444d817bc57e846e2198",
+  "builtFromWorkingTree": true,
+  "capture": "Unmodified screenshots of the locally served GOTA browser client.",
+  "images": [
+    {
+      "file": "gota-main-menu.jpg",
+      "screen": "Main menu",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "file": "gota-settings.jpg",
+      "screen": "Settings, Display tab",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "file": "gota-game-browser.jpg",
+      "screen": "Multiplayer room browser",
+      "width": 1920,
+      "height": 1080,
+      "sampleRooms": 12
+    },
+    {
+      "file": "gota-match-setup.jpg",
+      "screen": "Battle setup",
+      "width": 1920,
+      "height": 1080,
+      "samplePlayers": 10
+    }
+  ],
+  "featureReferences": [
+    "polyworld/src/polyworld/menus.nim",
+    "polyworld/src/polyworld/roomclients.nim",
+    "polyworld/games/gods_of_the_arena/frontend.nim",
+    "polyworld/games/gods_of_the_arena/multiplayer.nim"
+  ],
+  "multiplayerCapture": "Unmodified GOTA browser client rendered sample room and participant data from an isolated loopback WebSocket fixture. Screenshots are of the actual game UI, not HTML recreations."
+}

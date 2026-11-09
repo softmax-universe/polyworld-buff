@@ -1,0 +1,10 @@
+{
+  "fluffy-trace.png": {
+    "source": "https://github.com/treeform/fluffy/blob/535c5f234b41cd097b762203b5c216da1f4aeb1c/docs/screenshot.png",
+    "localSource": "/Users/me/p/fluffy/docs/screenshot.png",
+    "description": "Original Fluffy documentation screenshot showing an example trace, timing table, and memory treemap. This is not a Polyworld benchmark.",
+    "width": 1533,
+    "height": 911,
+    "modified": false
+  }
+}

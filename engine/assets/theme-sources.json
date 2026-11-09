@@ -1,0 +1,17 @@
+{
+  "theme": {
+    "source": "/Users/me/p/offstream/2001/index.html",
+    "stylesheet": "/Users/me/p/offstream/2001/2001.css",
+    "adaptation": "The original Polyworld showcase layout with the 2001 theme colors, Microgramma headings, IBM Plex body type, and console controls."
+  },
+  "softmax_logo": {
+    "file": "softmax-brand-mark.svg",
+    "source": "/Users/me/p/coplay/assets/softmax-brand-mark.svg",
+    "website": "https://softmax.com/",
+    "modified": false
+  },
+  "fonts": {
+    "Microgramma": "Copied unchanged from the user-supplied offstream/2001/fonts/microgramma-webfont.ttf.",
+    "IBM Plex Sans": "Official Google Fonts distribution. SIL OFL license included beside the font."
+  }
+}

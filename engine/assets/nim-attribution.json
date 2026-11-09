@@ -1,0 +1,9 @@
+{
+  "logo": {
+    "file": "nim-logo.svg",
+    "source": "https://nim-lang.org/assets/img/logo.svg",
+    "author": "Joseph Wecker",
+    "license": "CC BY 3.0",
+    "modified": false
+  }
+}

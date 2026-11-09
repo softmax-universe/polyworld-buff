@@ -1,0 +1,8 @@
+{
+  "file": "wasm-logo.svg",
+  "source": "https://raw.githubusercontent.com/WebAssembly/web-assembly-logo/main/dist/icon/web-assembly-icon-white.svg",
+  "repository": "https://github.com/WebAssembly/web-assembly-logo",
+  "author": "Carlos Baraza",
+  "license": "CC0-1.0",
+  "modified": false
+}

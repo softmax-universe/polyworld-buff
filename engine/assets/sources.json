@@ -1,0 +1,42 @@
+[
+  {
+    "image": "gota.jpg",
+    "game": "Gods of the Arena",
+    "captured": "2026-11-09",
+    "source": "https://github.com/softmax-universe/polyworld/tree/8e6233ca18b01f3e69db34db9217a4230ef4ba26/examples/gods_of_the_arena",
+    "viewerRevision": "8e6233ca18b01f3e69db34db9217a4230ef4ba26",
+    "capture": "Unedited browser replay screenshot with game HUD."
+  },
+  {
+    "image": "light-vs-dark.jpg",
+    "game": "A battle of kingdoms",
+    "captured": "2026-11-09",
+    "source": "https://github.com/softmax-universe/polyworld/tree/4f9ad8e6482207fce294a92ebf69bd9879dbc13d/examples/light_vs_dark",
+    "viewerRevision": "4f9ad8e6482207fce294a92ebf69bd9879dbc13d",
+    "capture": "Unedited browser replay screenshot with game HUD."
+  },
+  {
+    "image": "call-to-adventure.jpg",
+    "game": "Into the dungeon",
+    "captured": "2026-11-09",
+    "source": "https://github.com/softmax-universe/polyworld/tree/0ae60fc45ea2f9e553ee4d66a1f600b02c0e2f7d/examples/call_to_adventure",
+    "viewerRevision": "0ae60fc45ea2f9e553ee4d66a1f600b02c0e2f7d",
+    "capture": "Unedited browser replay screenshot with game HUD."
+  },
+  {
+    "image": "pudge-wars.jpg",
+    "game": "River arena",
+    "captured": "2026-11-09",
+    "source": "https://github.com/softmax-universe/polyworld-pudge-wars/tree/cd8111a5ee4f2fdc38c027615b33421f6c7d2536",
+    "viewerRevision": "cd8111a5ee4f2fdc38c027615b33421f6c7d2536",
+    "capture": "Unedited browser replay screenshot with game HUD."
+  },
+  {
+    "image": "awm.jpg",
+    "game": "Archers Warriors Mages",
+    "captured": "2026-11-09",
+    "source": "https://github.com/softmax-universe/polyworld/tree/36f4160a0c1c35711b5ab97355438b624d3d9f58/examples/awm",
+    "viewerRevision": "36f4160a0c1c35711b5ab97355438b624d3d9f58",
+    "capture": "Unedited browser replay screenshot with game HUD."
+  }
+]
