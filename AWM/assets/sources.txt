@@ -1,7 +1,15 @@
-AWM guide artwork, copied 2026-09-29.
-sniper.png, bear.png, primordial.png: polyworld_data/awm/cards/art/.
-Original project-generated card illustrations, copied without modification.
-Their creation is documented in polyworld_data/awm/cards/README.md and the
-PROMPTS-archer.md, PROMPTS.md, and PROMPTS-mage-additions.md files.
-Rules and deck composition are maintained in Metta-AI/polyworld/examples/awm.
-https://github.com/Metta-AI/polyworld/tree/main/examples/awm
+Cards and Casters guide artwork and rules, refreshed 2026-11-09.
+
+Game source: softmax-universe/polyworld, commit 3db61dcf1dd2ad9ab7451cbb468e36a0076197c5.
+Rules: games/cac/src/baseset.nim, core/core.nim, core/sim.nim and core/cardset.nim.
+cards.json: exported directly from the current card definitions and ruleText().
+cards/*.png: rendered by games/cac/src/ui/cardfaces.nim at 300 x 425.
+
+Artwork: softmax-universe/polyworld_art, commit e2475d82fef1d264ac964841e684704be90356dd.
+Card illustrations, frames, icons and fonts: cac/cards/.
+moonlit-table.webp: cac/loading/moonlit-table.webp, copied without modification.
+cards-and-casters.svg: polyworld/games/cac/web/loading/cnc-wordmark.svg.
+The wordmark and card text use Grenze. Its SIL Open Font License is in OFL.txt.
+
+https://github.com/softmax-universe/polyworld/tree/3db61dcf1dd2ad9ab7451cbb468e36a0076197c5/games/cac
+https://github.com/softmax-universe/polyworld_art/tree/e2475d82fef1d264ac964841e684704be90356dd/cac

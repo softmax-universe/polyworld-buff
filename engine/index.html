@@ -7,6 +7,7 @@
   <title>Polyworld · Engine</title>
   <link rel="stylesheet" href="engine.css">
   <script src="clips.js" defer></script>
+  <script src="prompts.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -25,7 +26,7 @@
             <p class="eyebrow">The Polyworld engine</p>
             <h1 id="hero-title">100% NIM AI FIRST<br>WEB 3d ENGINE<br>FOR VIBE CODING</h1>
             <p>I needed a game engine that did lockstep simulation and ran well in the browser and natively, ran really fast headless and had support for AI scripting and neural networks, and I love Nim so I built this.</p>
-            <div class="actions"><a class="button primary" href="#games">See the games <span aria-hidden="true">↓</span></a><a class="button" href="https://github.com/softmax-universe/polyworld">Explore the source <span aria-hidden="true">↗</span></a></div>
+            <div class="actions"><a class="button primary" href="#games">See the games <span aria-hidden="true">↓</span></a><a class="button" href="https://github.com/softmax-universe/polyworld">Source on Github <span aria-hidden="true">↗</span></a></div>
           </div>
           <figure class="hero-figure">
             <div class="shot"><video data-game="gota" src="assets/clips/gota.mp4" poster="assets/clips/gota.jpg" width="1280" height="720" muted loop playsinline controls preload="metadata" aria-label="Gods of the Arena: five-second gameplay clip"><a href="assets/clips/gota.mp4">Watch the Gods of the Arena gameplay clip</a></video></div>
@@ -40,10 +41,24 @@
       </div>
     </section>
 
-    <section class="introduction" aria-labelledby="intro-title">
-      <div class="wrap intro-grid">
-        <div><p class="eyebrow">One foundation. Many worlds.</p><h2 id="intro-title">A game engine.<br>A place to experiment.</h2></div>
-        <div><p>Polyworld brings together 3D rendering, procedural maps, pathfinding, lock-step networking, shared game UI, and simulation for procedural-deterministic and neural-network AI bots. Build the rules of your world on a foundation already used across arenas, strategy games and dungeon adventures.</p><p>For AI research, the same worlds become environments to explore: give agents observations and actions, run matches without graphics, then replay their decisions in the game.</p><a class="text-link" href="https://nim-lang.org/">Readable Nim. Native compilation. →</a></div>
+    <section class="introduction" id="getting-started" aria-labelledby="getting-started-title">
+      <div class="wrap example-layout">
+        <div class="example-copy">
+          <h2 id="getting-started-title">Getting started</h2>
+          <p>Start with a game you want to play. Give your AI agent the idea, let it set up Polyworld, then build and iterate together.</p>
+          <p>Try a little RTS with gnome workers, a growing village and a rival army. Copy this prompt into your AI coding agent to get started.</p>
+          <a class="text-link" href="https://github.com/softmax-universe/polyworld#run-locally">Read the setup guide ↗</a>
+        </div>
+        <figure class="code-example prompt-example">
+          <figcaption><span>Any AI agent (Claude, Codex, Grok, Gemini...)</span><button class="copy-prompt" type="button" aria-controls="gnome-prompt">Copy prompt</button><span class="prompt-status" role="status"></span></figcaption>
+          <pre tabindex="0" aria-label="Prompt to build a gnome RTS"><code><span id="gnome-prompt">Clone https://github.com/softmax-universe/polyworld and set it up on my machine. Read its README and repository instructions, install the required Nim version and dependencies, and fetch the art assets with Git LFS.
+
+Build a small 3D RTS in Nim with gnomes. Start with an isometric camera, drag-to-select units and right-click movement. Let gnome workers gather wood and gold, build a village and train an army to take on a simple AI opponent. Win by destroying the enemy base.
+
+Reuse Polyworld's rendering, pathfinding, deterministic simulation and UI. Use the available gnome characters and matching art assets. Keep the first version small and playable.
+
+Run it locally, fix build or runtime errors, and show me the command to play. Then we can iterate on the game together.</span></code></pre>
+        </figure>
       </div>
     </section>
 
@@ -70,10 +85,10 @@
           <div class="game-actions"><a class="button primary" href="../PudgeWars/">Explore the game ↗</a><a class="button primary" href="https://softmax.com/pudge-wars" aria-label="Play Pudge Wars on Softmax">Play ↗</a></div>
         </article>
         <article class="game-feature">
-          <div class="shot"><video data-game="awm" src="assets/clips/awm.mp4" poster="assets/clips/awm.jpg" width="1280" height="720" muted loop playsinline controls preload="metadata" aria-label="Archers Warriors Mages: five-second gameplay clip"><a href="assets/clips/awm.mp4">Watch the Archers Warriors Mages gameplay clip</a></video></div>
-          <div class="game-heading"><h3>Archers Warriors Mages</h3><span class="eyebrow">Card Game</span></div>
+          <div class="shot"><video data-game="awm" src="assets/clips/awm.mp4" poster="assets/clips/awm.jpg" width="1280" height="720" muted loop playsinline controls preload="metadata" aria-label="Cards and Casters: five-second gameplay clip"><a href="assets/clips/awm.mp4">Watch the Cards and Casters gameplay clip</a></video></div>
+          <div class="game-heading"><h3>Cards and Casters</h3><span class="eyebrow">Card Game</span></div>
           <p>Make each card count. Combine class abilities, targeting and timing in a tactical battle presented as a living 3D board.</p>
-          <div class="game-actions"><a class="button primary" href="../AWM/">Explore the game ↗</a><a class="button primary" href="https://softmax.com/cards-and-casters" aria-label="Play Archers Warriors Mages on Softmax, listed as Cards and Casters">Play ↗</a></div>
+          <div class="game-actions"><a class="button primary" href="../AWM/">Explore the game ↗</a><a class="button primary" href="https://softmax.com/cards-and-casters" aria-label="Play Cards and Casters on Softmax">Play ↗</a></div>
         </article>
         </div>
         <div class="gallery-footer"><a class="text-link" href="../">Browse all game guides ↗</a></div>
@@ -180,9 +195,9 @@
           </figure>
         </div>
         <div class="network-features">
-          <article><p class="eyebrow">Discover</p><h3>A place to meet</h3><p>Public rooms, invite links and spectators make it easy to gather around a match.</p></article>
-          <article><p class="eyebrow">Coordinate</p><h3>Every command in order</h3><p>Lock-step networking keeps players advancing through the same ordered simulation ticks.</p></article>
-          <article><p class="eyebrow">Verify</p><h3>Keep the world in sync</h3><p>Tick acknowledgements and state checks help detect when clients fall out of sync.</p></article>
+          <article><h3>Lockstep Networking</h3><p>Every client runs the same deterministic simulation from the same ordered inputs. Browser and native players advance together, keeping multiplayer matches in sync without streaming the whole world.</p></article>
+          <article><h3>Tiny Replays</h3><p>Save the match setup, player commands and state hashes, then rebuild the action through deterministic playback. Compact replays make it easy to share matches and inspect what your bots did.</p></article>
+          <article><h3>Hashed snapshots</h3><p>Check simulation state with hashes that match across native and WebAssembly builds. Compare checkpoints to detect desyncs and identify where a match or replay starts to diverge.</p></article>
         </div>
       </div>
     </section>
@@ -227,6 +242,66 @@
             <li><span class="library-role">SIMD &amp; checksums</span><div class="library-links"><a href="https://github.com/guzba/nimsimd">NimSIMD</a><a href="https://github.com/guzba/crunchy">Crunchy</a></div></li>
             <li><span class="library-role">Profiling &amp; benchmarks</span><div class="library-links"><a href="https://github.com/treeform/fluffy">Fluffy</a><a href="https://github.com/treeform/benchy">Benchy</a></div></li>
           </ul>
+        </figure>
+      </div>
+    </section>
+
+    <section class="introduction" id="example" aria-labelledby="intro-title">
+      <div class="wrap example-layout">
+        <div class="example-copy">
+          <p class="eyebrow">One foundation. Many worlds.</p>
+          <h2 id="intro-title">A game engine.<br>A place to experiment.</h2>
+          <p>Polyworld brings together 3D rendering, procedural maps, pathfinding, lock-step networking, shared game UI, and simulation for procedural-deterministic and neural-network AI bots. Build the rules of your world on a foundation already used across arenas, strategy games and dungeon adventures.</p>
+          <p>For AI research, the same worlds become environments to explore: give agents observations and actions, run matches without graphics, then replay their decisions in the game.</p>
+          <p>A window, a camera, keyboard input, drawing and a score in 40 lines. Move with the arrow keys and collect the gold marker.</p>
+          <p class="caption example-run">Save the example in your Polyworld checkout, then run:</p>
+          <pre class="run-command"><code>nim r collect.nim</code></pre>
+          <div class="example-screenshot">
+            <img src="assets/collect-example.jpg" width="960" height="696" alt="Collect example running: a blue player and gold target on an arena." loading="lazy">
+          </div>
+        </div>
+        <figure class="code-example">
+          <figcaption><span>collect.nim / 40 lines</span><a href="examples/collect.nim" download>Download example ↓</a></figcaption>
+          <pre tabindex="0" aria-label="40-line Nim game example"><code><span class="code-keyword">import</span> chroma, gltf, opengl, vmath, windy, polyworld/shapes
+
+<span class="code-keyword">let</span> window = newWindow(<span class="code-string">&quot;Arrow keys: collect gold&quot;</span>, ivec2(<span class="code-number">960</span>, <span class="code-number">640</span>))
+window.makeContextCurrent()
+loadExtensions()
+
+<span class="code-keyword">let</span> render = newRenderer(window)
+<span class="code-keyword">var</span>
+  batch = initShapeRenderer()
+  player = vec3(<span class="code-number">0</span>)
+  goal = vec3(<span class="code-number">2</span>, <span class="code-number">0</span>, <span class="code-number">2</span>)
+  score = <span class="code-number">0&#x27;i32</span>
+<span class="code-keyword">let</span> camera = perspective(<span class="code-number">45&#x27;f</span>, <span class="code-number">1.5&#x27;f</span>, <span class="code-number">0.1&#x27;f</span>, <span class="code-number">50&#x27;f</span>) *
+  lookAt(vec3(<span class="code-number">8</span>, <span class="code-number">10</span>, <span class="code-number">8</span>), vec3(<span class="code-number">0</span>), vec3(<span class="code-number">0</span>, <span class="code-number">1</span>, <span class="code-number">0</span>))
+
+<span class="code-keyword">while</span> <span class="code-keyword">not</span> window.closeRequested:
+  pollEvents()
+  <span class="code-keyword">if</span> window.buttonPressed[KeyLeft]: player.x -= <span class="code-number">1</span>
+  <span class="code-keyword">if</span> window.buttonPressed[KeyRight]: player.x += <span class="code-number">1</span>
+  <span class="code-keyword">if</span> window.buttonPressed[KeyUp]: player.z -= <span class="code-number">1</span>
+  <span class="code-keyword">if</span> window.buttonPressed[KeyDown]: player.z += <span class="code-number">1</span>
+  player = clamp(player, vec3(-<span class="code-number">4</span>, <span class="code-number">0</span>, -<span class="code-number">4</span>), vec3(<span class="code-number">4</span>, <span class="code-number">0</span>, <span class="code-number">4</span>))
+
+  <span class="code-keyword">if</span> player == goal:
+    inc score
+    window.title = <span class="code-string">&quot;Collected: &quot;</span> &amp; $score
+    goal = ivec3((score * <span class="code-number">3</span>) <span class="code-keyword">mod</span> <span class="code-number">9</span> - <span class="code-number">4</span>, <span class="code-number">0</span>, (score * <span class="code-number">5</span>) <span class="code-keyword">mod</span> <span class="code-number">9</span> - <span class="code-number">4</span>).vec3
+
+  render.beginFrame(window, window.size)
+  render.clearScreen(color(<span class="code-number">0.04</span>, <span class="code-number">0.05</span>, <span class="code-number">0.08</span>, <span class="code-number">1</span>))
+  batch.clear()
+  batch.addSquare(vec3(<span class="code-number">0</span>), <span class="code-number">10</span>, rgbx(<span class="code-number">40</span>, <span class="code-number">55</span>, <span class="code-number">70</span>, <span class="code-number">255</span>))
+  batch.addHexagon(goal, <span class="code-number">0.35</span>, rgbx(<span class="code-number">255</span>, <span class="code-number">190</span>, <span class="code-number">75</span>, <span class="code-number">255</span>))
+  batch.addCircle(player, <span class="code-number">0.35</span>, rgbx(<span class="code-number">90</span>, <span class="code-number">200</span>, <span class="code-number">255</span>, <span class="code-number">255</span>))
+  batch.draw(camera)
+  render.endFrame()
+  window.swapBuffers()
+
+batch.closeShapeRenderer()
+window.close()</code></pre>
         </figure>
       </div>
     </section>

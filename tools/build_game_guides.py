@@ -1,19 +1,17 @@
 """Build the four additional guides and the game directory from curated rules.
 
 Run with python3 tools/build_game_guides.py. Artwork is checked in beside each
-page. Rules were reviewed against the sibling game sources on 2026-09-29;
-source links are included in each guide. This does not publish the site.
+page. Each guide includes its own review date and source links. Cards and
+Casters reads card data exported from the game. This does not publish the site.
 """
 from html import escape
+import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATE = '29 September 2026'
 POLYWORLD = 'https://github.com/softmax-universe/polyworld/blob/main/games/'
-AWM_SOURCE = (
-    'https://github.com/softmax-universe/polyworld/blob/'
-    '46e74720543e6b6d17e6aa05680d744c5302fc59/examples/awm/'
-)
+CAC_SOURCE = POLYWORLD + 'cac/'
 PUDGE = 'https://github.com/softmax-universe/polyworld-pudge-wars/blob/main/'
 PAINTBOT = 'https://github.com/softmax-universe/paintbot-pw/blob/main/'
 
@@ -48,7 +46,8 @@ def section(key, title, body, icon='stats'):
 
 
 def write_guide(slug, title, genre, intro, art, facts, sections, sources,
-                accent, landscape=False):
+                accent, landscape=False, reviewed=DATE, stylesheet=None,
+                body_class='', hero_visual=None):
     """Write one standalone guide with shared site navigation and styling."""
     nav = ''.join(f'<a class="jump" href="#{key}">{escape(label)}</a>'
                   for key, label, _ in sections)
@@ -57,6 +56,9 @@ def write_guide(slug, title, genre, intro, art, facts, sections, sources,
     source_html = ''.join(f'<li><a href="{url}">{escape(label)}</a></li>'
                           for label, url in sources)
     art_class = ' landscape' if landscape else ''
+    extra_styles = f'\n  <link rel="stylesheet" href="{stylesheet}">' if stylesheet else ''
+    visual = hero_visual or (f'<img class="hero-art{art_class}" '
+                            f'src="assets/{art}" alt="{escape(title)} artwork">')
     html = f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,9 +66,9 @@ def write_guide(slug, title, genre, intro, art, facts, sections, sources,
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{escape(intro, quote=True)}">
   <title>{escape(title)} · Polyworld Buff</title>
-  <link rel="stylesheet" href="../guides.css">
+  <link rel="stylesheet" href="../guides.css">{extra_styles}
 </head>
-<body style="--accent: {accent}">
+<body{f' class="{body_class}"' if body_class else ''} style="--accent: {accent}">
   <a class="skip" href="#guide">Skip to guide</a>
   <header class="topbar"><nav class="nav-inner" aria-label="Site navigation">
     <a class="brand" href="../">Polyworld Buff</a>
@@ -79,14 +81,13 @@ def write_guide(slug, title, genre, intro, art, facts, sections, sources,
         <h1>{escape(title)}</h1><p>{escape(intro)}</p>
         <a class="jump" href="#overview">Learn the game &darr;</a>
       </div>
-      <div class="hero-visual"><img class="hero-art{art_class}"
-        src="assets/{art}" alt="{escape(title)} artwork"></div>
+      <div class="hero-visual">{visual}</div>
     </div>
     <dl class="facts">{facts_html}</dl>
     <nav class="section-nav" aria-label="Guide sections">{nav}</nav>
     {''.join(body for _, _, body in sections)}
     <section id="sources"><h2>Sources &amp; artwork</h2>
-      <p>Rules reviewed on {DATE}. This guide describes the source version
+      <p>Rules reviewed on {reviewed}. This guide describes the source version
       available on that date; match settings and older replays can differ.</p>
       <ul class="sources">{source_html}</ul>
       <p class="caption"><a href="assets/sources.txt">Artwork sources</a></p>
@@ -166,68 +167,115 @@ def heartleaf():
 
 
 def awm():
-    """Build the three-class card game and its complete base-set reference."""
-    overview = '''<p>Archers Warriors Mages is a two-player card battler. Each player
-    chooses one of three classes and uses its fixed 40-card deck. Play minions,
-    cast spells, and protect your hero while building a winning board.</p>''' + panels([
-        ('Start the duel', 'Both heroes begin with 20 life and five cards. The first player is chosen randomly and skips their first turn’s draw.'),
-        ('Build your turn', 'At the start of each turn, maximum energy increases by one, energy refills, and you draw a card. Spend energy to play cards from your hand.'),
-        ('Win', 'Reduce the opposing hero to zero life. A player also loses if they must draw from an empty deck.')])
-    classes = '''<p>These are fixed class decks, with 40 cards each. Minion stats below
-    are written as power / toughness. Copies are the number of that card in the starting deck.</p><div class="grid">'''
+    """Build Cards and Casters from the game's exported card definitions.
+
+    tools/export_cac.nim writes AWM/assets/cards.json and card images using
+    games/cac/src/core and ui/cardfaces from the sibling Polyworld checkout.
+    The AWM path stays stable for existing links.
+    """
+    data = json.loads((ROOT / 'AWM/assets/cards.json').read_text())
+    cards = data['cards']
+    overview = '''<p>Cards and Casters is a card game for two to seven heroes.
+    Play a duel or join a multiplayer table where the last hero standing wins.
+    Pick Archer, Warrior or Mage, then use a ready-made deck or build your own
+    from the full base set.</p>''' + panels([
+        ('Take your seat', 'Every hero starts with 20 life, a 40-card deck and five cards in hand. The first player is chosen randomly and skips the first turn’s draw. Living seats then take turns in order.'),
+        ('Build your turn', 'Your total energy rises by one with no cap, your energy refills, you draw a card, and start-of-turn triggers resolve. Play affordable cards and attack with ready minions in any order. Ending your turn resolves end-of-turn triggers.'),
+        ('Be the last hero standing', 'A hero is eliminated at zero life or after drawing from an empty deck. Their hand is discarded and their turns stop, but their cards in play remain. If the final heroes fall together, the current player wins.')])
+    classes = '<div class="grid">'
     for title, art, description in [
-        ('Archer', 'sniper', 'Ranged minions avoid return damage from melee fighters. Bolt pressures heroes while Hail of Arrows clears fragile enemy boards.'),
-        ('Warrior', 'bear', 'Efficient minions, permanent team buffs, and extra Footsoldiers build a wide board. Duel can turn a small advantage into a favorable fight.'),
-        ('Mage', 'primordial', 'Bounce effects, card draw, and protective Bubbles buy time. Primordial offers a huge body and sends the rest of the board back to hand.')]:
-        classes += f'<article class="panel"><img class="panel-art" src="assets/{art}.png" loading="lazy" alt="{title} card illustration"><h3>{title}</h3><p>{description}</p></article>'
+        ('Archer', 'sharpshooter', 'Ranged attacks, Hidden minions and direct damage. Post can give small Archer minions Ready and summon copies, while Wildfire wears down the whole table.'),
+        ('Warrior', 'commander', 'Build a board of efficient minions, summon Footsoldiers and strengthen them together. Banner keeps reinforcements coming, and Pillage removes troublesome trinkets.'),
+        ('Mage', 'spirit', 'Bounce minions, draw cards and reshape the board. Control steals an opposing minion; Summon Primordial clears one hero’s board before creating your own 10/10.')]:
+        classes += f'''<article class="panel"><a href="assets/cards/{art}.png" aria-label="View {art.replace('-', ' ')} card"><img class="panel-art" src="assets/cards/{art}.png" width="300" height="425" loading="lazy" alt="{title} card from the current game"></a><h3>{title}</h3><p>{description}</p></article>'''
     classes += '</div>'
+    decks = '''<p>Your deck must contain exactly 40 base-set cards. Include one to
+    four copies of each card you choose; the Archer, Warrior and Mage level-up
+    trinkets may appear any number of times. Cards from every class are legal.
+    An invalid bot deck is eliminated before the first turn.</p>
+    <div class="note"><strong>Off-class cost = printed cost + max(0, 3 − class levels).</strong>
+    <p>A card from your hero’s class costs its printed energy. A card from another
+    class costs three extra energy, reduced by the levels in that class granted
+    by cards you control. Classless cards have no surcharge.</p>
+    <p>For example, a Warrior pays 5 energy for the 2-energy Sniper. With two Archer
+    level-up trinkets in play, that becomes 3; with three, it returns to 2.</p></div>
+    <p>The reference decks still contain 40 cards each. The card tables show their
+    exact copy counts. A dash means the card is absent from that preconstructed
+    deck, not that it is forbidden in a custom deck.</p>'''
     combat = table(['Rule', 'How it works'], [
-        ('Minions', 'Attack once per turn, starting on the turn after they enter play. They can attack an enemy hero or minion.'),
-        ('Damage', 'Minions exchange combat damage. Damage remains on a surviving minion; zero toughness sends it to the discard pile.'),
-        ('Ranged', 'A ranged minion takes no combat damage from a non-ranged minion, whether attacking or defending. Spell and on-play damage still apply.'),
-        ('Permanent changes', 'Power/toughness buffs and lost keywords last while the card stays in play. Bouncing it to hand restores its printed state.'),
-        ('Summoning', 'Summoned minions arrive on the right of your board, cannot attack immediately, and do not fire their own on-play rules.'),
-        ('Trinkets', 'Board cards that are not minions. They cannot attack or be attacked and are ignored by effects that target only minions.'),
-        ('Next-turn triggers', 'Resolve after your normal draw, provided the triggering card remains in play.'),
-        ('Duel', 'Choose its targets in order. The forced fight does not consume a minion’s normal attack.')])
-    headers = ['Card', 'Energy', 'Type / stats', 'Copies', 'Effect']
-    archer = table(headers, [
-        ('Bolt', 1, 'Spell', 10, 'Deal 2 damage to a hero.'),
-        ('Sniper', 2, 'Minion · 2 / 1', 14, 'Ranged.'),
-        ('Sharpshooter', 3, 'Minion · 3 / 1', 10, 'Ranged. On play: deal 1 damage to a minion or hero.'),
-        ('Hail of Arrows', 3, 'Spell', 6, 'Deal 1 damage to every enemy minion.')], True)
-    warrior = table(headers, [
-        ('Bear', 2, 'Minion · 3 / 2', 8, 'No additional effect.'),
-        ('Swords', 2, 'Spell', 5, 'Give all friendly minions +1 power.'),
-        ('Shields', 1, 'Spell', 4, 'Give all friendly minions +1 toughness.'),
-        ('Duel', 2, 'Spell', 5, 'Give the first target minion +1/+1. The second loses Ranged. Then the two fight.'),
-        ('Tactician', 2, 'Minion · 1 / 2', 5, 'On play: reduce a target minion’s power by 1.'),
-        ('Footsoldier', 1, 'Minion · 1 / 2', 6, 'No additional effect.'),
-        ('Commander', 5, 'Minion · 2 / 3', 4, 'On play: summon two Footsoldiers.'),
-        ('Rally', 5, 'Spell', 3, 'Summon two Footsoldiers, then give all friendly minions +1 power.')], True)
-    mage = table(headers, [
-        ('Bouncer', 1, 'Minion · 1 / 1', 16, 'On play: return a minion to its owner’s hand.'),
-        ('Oozification', 4, 'Spell', 4, 'Destroy a minion. Its owner summons one Ooze per point of its current toughness.'),
-        ('Plan', 3, 'Trinket', 7, 'Draw one card now. At your next turn, draw one more and destroy Plan.'),
-        ('Study', 2, 'Spell', 7, 'Draw two cards, then choose one card to discard.'),
-        ('Primordial', 8, 'Minion · 10 / 10', 2, 'On play: return all other board cards to their owners’ hands.'),
-        ('Bubble Shield', 2, 'Spell', 4, 'Summon two Bubbles.')], True)
-    tokens = table(['Token', 'Type / stats', 'Effect'], [
-        ('Ooze', 'Minion · 0 / 1', 'Summoned by Oozification; not included in the starting deck.'),
-        ('Bubble', 'Trinket', 'When its owner’s hero is attacked, return the attacker to its owner’s hand and destroy this Bubble. Not included in the starting deck.')])
+        ('Minions', 'Attack an opponent’s hero or minion once per turn, normally starting on your next turn after they enter play. You can choose among opponents at a multiplayer table.'),
+        ('Damage', 'Minions deal their power to each other simultaneously. Damage remains on survivors; zero toughness sends a minion to its original owner’s discard pile.'),
+        ('Ranged', 'Takes no combat damage from a non-Ranged minion, whether attacking or defending. Damage from card effects still applies.'),
+        ('Hidden N / Hidden', 'Cannot be attacked for N more of its controller’s turns, or indefinitely for plain Hidden. Card effects can still target it, and it can attack normally.'),
+        ('Ready', 'Can attack on the turn it enters play. It still only gets one normal attack per turn.'),
+        ('Lasts N', 'Leaves play as the Nth of its controller’s turns ends, counting the turn it entered.'),
+        ('Trinkets', 'Stay on the board but cannot attack or be attacked. Effects that target only minions skip them; trinket-targeting effects can still remove them.'),
+        ('Summoning', 'Summoned cards enter at the right of the board. Their on-play rules resolve for their controller after the summoning effect. Minions still need Ready to attack immediately.'),
+        ('Control and ownership', 'A stolen or gifted card keeps its damage and changes. A transferred minion waits until its new controller’s next turn to attack. Bouncing or destroying it returns it to its original owner’s hand or discard pile.'),
+        ('Changes and bounce', 'Damage, buffs and gained or lost rules persist while a card stays in play. Returning it to hand restores its printed state.'),
+        ('Duel', 'A forced fight exchanges combat damage without using either minion’s normal attack. Choose its two targets in order.'),
+        ('Targets and triggers', 'Resolve choices in the order requested. Discard choices and triggered effects can require decisions during another player’s turn; finish them before play continues.')])
+
+    def card_table(selected):
+        """Render live card text and artwork beside costs and deck counts."""
+        rows = []
+        for card in selected:
+            stats = card['kind']
+            if stats == 'Minion':
+                stats += f" · {card['power']} / {card['toughness']}"
+            rules = escape(card['rules'] or 'No additional effect.').replace('\n', '<br>')
+            copies = str(card['preconCopies']) if card['preconCopies'] else '—'
+            rows.append(f'''<tr data-card="{escape(card['name'], quote=True)}"><th scope="row"><a class="card-preview" href="assets/cards/{card['slug']}.png"><img src="assets/cards/{card['slug']}.png" width="300" height="425" loading="lazy" alt=""><span>{escape(card['name'])}</span></a></th><td>{card['energy']}</td><td>{stats}</td><td>{copies}</td><td>{rules}</td></tr>''')
+        return '''<div class="table-wrap" tabindex="0" role="region" aria-label="Card reference table, scroll horizontally"><table class="cards-table"><thead><tr><th scope="col">Card</th><th scope="col">Energy</th><th scope="col">Type / power / toughness</th><th scope="col">Precon copies</th><th scope="col">Printed rules</th></tr></thead><tbody>''' + '\n'.join(rows) + '</tbody></table></div>'
+
+    levelups = '''<p>These classless, zero-cost trinkets each grant one level in the
+    named class while they remain in play. They reduce off-class costs and have
+    no four-copy limit.</p>''' + card_table([card for card in cards if card['levelUp']])
+    reference = '''<p>All {count} cards in the current base set are included below.
+    Energy is the printed cost before off-class surcharges. Card text and stats
+    come directly from the game. Select an image to inspect the full card.</p>'''.format(count=len(cards))
+    tokens = table(['Card', 'Created by', 'In the default deck?'], [
+        ('Footsoldier', 'Commander, Rally and Banner.', 'Yes: four copies in Warrior.'),
+        ('Ooze', 'Oozification, one per point of the destroyed minion’s current toughness.', 'No.'),
+        ('Bubble', 'Bubble Shield. An attack on your hero triggers its bounce and destroys the Bubble.', 'No.'),
+        ('Primordial', 'Summon Primordial creates a 10/10 after returning one targeted hero’s board to hand.', 'No. The spell has four copies in Mage.'),
+        ('Burnout', 'Overwork creates it when destroyed. At the end of your turn it damages you for 2 and makes you discard a card.', 'No.')]) + '<p>These cards also belong to the base set and can be included in custom decks under the normal copy limits.</p>'
     tips = panels([
-        ('Archer: pick clean fights', 'Trade ranged minions into non-ranged attackers when it improves your board, and count your remaining direct damage before committing Bolt.'),
-        ('Warrior: build before buffing', 'Swords and Shields affect every friendly minion already in play. Rally summons before its buff, so the new Footsoldiers benefit too.'),
-        ('Mage: buy time carefully', 'Bounce can rescue or reset a friendly minion as well as delay an enemy. Watch your deck size: extra draws can become dangerous near deck-out.')])
-    write_guide('AWM', 'Archers Warriors Mages', 'Card battler · Three classes · Fixed decks',
-        'Choose a class, spend energy, and build a board of minions, spells, and trinkets in a head-to-head card duel.',
-        'sniper.png', [('Players', '2'), ('Starting life', '20'), ('Deck size', '40 cards'), ('Opening hand', '5 cards')],
-        [section('overview', 'How to play', overview, 'champion'), section('classes', 'The three classes', classes, 'minion'),
-         section('combat', 'Turns & combat', combat, 'attack'), section('archer', 'Archer cards', archer, 'range'),
-         section('warrior', 'Warrior cards', warrior, 'damage'), section('mage', 'Mage cards', mage, 'mana'),
-         section('tokens', 'Summoned tokens', tokens, 'minion'), section('tips', 'Strategy notes', tips)],
-        [('Card definitions & deck lists', AWM_SOURCE + 'baseset.nim'), ('Turn & victory rules', AWM_SOURCE + 'awmsim.nim'),
-         ('Rules engine', AWM_SOURCE + 'awmcore.nim')], '#e2c597', landscape=True)
+        ('Choose your opponent', 'At a multiplayer table, spending everything to eliminate one rival can leave you exposed to the others. Count damage across the whole table before committing.'),
+        ('Build before buffing', 'Warrior buffs affect the minions already in play. Rally summons its Footsoldiers before adding power, so the new recruits benefit too.'),
+        ('Plan your costs', 'A multiclass deck gains options but can lose tempo to the energy surcharge. Level-up trinkets help, and bounce or trinket removal can make those costs rise again.')])
+    play = '''<p>Play in the browser on <a href="https://softmax.com/cards-and-casters">Softmax</a>, or run the native game from <code>games/cac</code> in a Polyworld checkout:</p>
+    <pre class="guide-command"><code>nim c src/cac.nim
+./cac --human
+./cac --players 4 --human
+./cac --cards</code></pre>
+    <p>The human player picks a class and uses its preconstructed deck. Pass
+    <code>--human players/archer_warrior.bas</code> to use that script’s class and
+    custom deck. Bots are BASIC scripts; recorded matches can be watched with
+    <code>--replay PATH</code>.</p>'''
+    sections = [
+        section('overview', 'How to play', overview, 'champion'),
+        section('classes', 'The three classes', classes, 'minion'),
+        section('decks', 'Deckbuilding & multiclassing', decks, 'stats'),
+        section('combat', 'Turns, combat & keywords', combat, 'attack'),
+        section('levelups', 'Class level-ups', reference + levelups, 'mana')]
+    for hero_class, key, icon in [('Archer', 'archer', 'range'), ('Warrior', 'warrior', 'damage'), ('Mage', 'mage', 'mana')]:
+        sections.append(section(key, hero_class + ' cards', card_table([card for card in cards if card['heroClass'] == hero_class]), icon))
+    sections += [section('tokens', 'Cards created by effects', tokens, 'minion'),
+                 section('tips', 'Strategy notes', tips),
+                 section('play', 'Play & write bots', play, 'champion')]
+    visual = '''<img class="cac-wordmark" src="assets/cards-and-casters.svg" width="560" height="350" alt="Cards and Casters"><img class="cac-loading-art" src="assets/moonlit-table.webp" width="1672" height="941" alt="An archer, warrior and mage playing cards in a moonlit observatory">'''
+    write_guide('AWM', 'Cards and Casters', 'Card game · 2–7 heroes · Custom decks',
+        'Build a deck, choose your targets and outlast the table. A duel or multiplayer card battle with Archers, Warriors, Mages and room to mix all three.',
+        'cards-and-casters.svg', [('Players', '2–7'), ('Starting life', str(data['startingLife'])),
+        ('Deck size', f"{data['deckSize']} cards"), ('Opening hand', f"{data['openingHand']} cards")],
+        sections, [('Game rules & bot guide', CAC_SOURCE + 'README.md'),
+        ('Card definitions & preconstructed decks', CAC_SOURCE + 'src/baseset.nim'),
+        ('Turn, combat & victory rules', CAC_SOURCE + 'src/core/sim.nim'),
+        ('Deck validation', CAC_SOURCE + 'src/core/cardset.nim'),
+        ('Exported card data', 'assets/cards.json')], '#e2c597', reviewed='9 November 2026',
+        stylesheet='guide.css', body_class='cac-guide', hero_visual=visual)
+
 
 
 def pudge():
@@ -387,8 +435,8 @@ def home():
          'Discover the party, dungeon monsters, abilities, and loot.', False),
         ('Heartleaf', 'Heartleaf', 'Heartleaf/assets/logo.png',
          'Gather vegetables, host dinner parties, and get to know the village.', False),
-        ('AWM', 'Archers Warriors Mages', 'AWM/assets/sniper.png',
-         'Explore three classes, every base-set card, and the rules of the duel.', True),
+        ('AWM', 'Cards and Casters', 'AWM/assets/cards-and-casters.svg',
+         'Build a deck, explore all 39 cards, and outlast a table of up to seven heroes.', False),
         ('PudgeWars', 'Pudge Wars', 'PudgeWars/assets/logo.png',
          'Land hooks, control the river, and compare abilities, runes, and upgrades.', False),
         ('Paintbot', 'Paintbot PW', 'Paintbot/assets/paint-crew.png',
@@ -404,7 +452,7 @@ def home():
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Game guides for Gods of the Arena, Light vs Dark, Call to Adventure, Heartleaf, Archers Warriors Mages, Pudge Wars, and Paintbot PW.">
+  <meta name="description" content="Game guides for Gods of the Arena, Light vs Dark, Call to Adventure, Heartleaf, Cards and Casters, Pudge Wars, and Paintbot PW.">
   <title>Polyworld Buff</title><link rel="stylesheet" href="guides.css">
 </head><body><main>
   <nav class="home-nav" aria-label="Main navigation"><a href="#game-guides" aria-current="page">Game guides</a><a href="engine/">Polyworld Engine ↗</a></nav>
