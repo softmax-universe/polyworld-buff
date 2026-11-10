@@ -195,6 +195,37 @@ Run it locally, fix build or runtime errors, and launch the game for me to play,
           <figcaption>64 assets from the collection. Select one for a closer look.<span class="art-scroll-hint">Scroll sideways to see all eight columns.</span></figcaption>
         </figure>
       </div>
+      <section class="wrap art-tools" id="tools" aria-labelledby="tools-title">
+        <p class="eyebrow">Creation tools</p>
+        <h2 id="tools-title">Make it your own.</h2>
+        <p class="section-intro">Use Chargen, Treegen and Rockgen to build assets, and the grid terrain system to shape your world. Give your AI agent the <a href="https://github.com/softmax-universe/polyworld_art/tree/main/skills">art generation skill files</a> for characters, buildings, icons, trees, rocks and terrain. We recommend GPT-6 Astra for modeling assets.</p>
+        <div class="gallery tool-gallery">
+          <article class="game-feature">
+            <div class="shot"><video data-tool="chargen" src="assets/tools/chargen.mp4" poster="assets/tools/chargen.jpg" width="1440" height="900" muted loop playsinline controls preload="metadata" aria-label="Chargen: character presets and animation previews"><a href="assets/tools/chargen.mp4">Watch Chargen in action</a></video></div>
+            <div class="game-heading"><h3>Chargen</h3></div>
+            <p>Mix character parts, outfits and colors, then preview the result in motion with a library of animation clips.</p>
+            <a class="text-link" href="https://github.com/softmax-universe/polyworld/tree/main/experiments/chargen">Explore Chargen ↗</a>
+          </article>
+          <article class="game-feature">
+            <div class="shot"><video data-tool="treegen" src="assets/tools/treegen.mp4" poster="assets/tools/treegen.jpg" width="1440" height="900" muted loop playsinline controls preload="metadata" aria-label="Treegen: tree presets, seed variations and editable controls"><a href="assets/tools/treegen.mp4">Watch Treegen in action</a></video></div>
+            <div class="game-heading"><h3>Treegen</h3></div>
+            <p>Shape trunks, branches and leaves. Switch species, explore seeds and grow trees, shrubs and flowering plants from reusable recipes.</p>
+            <a class="text-link" href="https://github.com/softmax-universe/polyworld/tree/main/experiments/treegen">Explore Treegen ↗</a>
+          </article>
+          <article class="game-feature">
+            <div class="shot"><video data-tool="rockgen" src="assets/tools/rockgen.mp4" poster="assets/tools/rockgen.jpg" width="1440" height="900" muted loop playsinline controls preload="metadata" aria-label="Rockgen: shape, surface, color and seed variations"><a href="assets/tools/rockgen.mp4">Watch Rockgen in action</a></video></div>
+            <div class="game-heading"><h3>Rockgen</h3></div>
+            <p>Build rocks from shape, surface and color controls. Change the seed, compare variations and export the result as a GLB.</p>
+            <a class="text-link" href="https://github.com/softmax-universe/polyworld/tree/main/experiments/rockgen">Explore Rockgen ↗</a>
+          </article>
+          <article class="game-feature">
+            <div class="shot"><video data-tool="terrain" src="assets/tools/terrain.mp4?v=props" poster="assets/tools/terrain.jpg?v=props" width="1440" height="900" muted loop playsinline controls preload="metadata" aria-label="Grid terrain: walkable edges, pathfinding, noise seed changes, rocks and trees"><a href="assets/tools/terrain.mp4?v=props">Watch grid terrain in action</a></video></div>
+            <div class="game-heading"><h3>Grid terrain</h3></div>
+            <p>Build layered terrain from noise. Inspect walkable edges, find routes across the grid and regenerate the landscape with a new seed.</p>
+            <a class="text-link" href="https://github.com/softmax-universe/polyworld/blob/main/experiments/terrain/quadterrain.nim">Explore grid terrain ↗</a>
+          </article>
+        </div>
+      </section>
     </section>
 
     <section class="showcase multiplayer" id="multiplayer" aria-labelledby="multiplayer-title">

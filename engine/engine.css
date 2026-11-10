@@ -135,6 +135,9 @@ figcaption { display: flex; justify-content: space-between; flex-wrap: wrap; gap
 .art-grid a:hover { outline: 2px solid var(--white); outline-offset: 1px; }
 .art-sampler figcaption { display: block; }
 .art-scroll-hint { display: none; }
+.art-tools { margin-top: 64px; padding-top: 56px; border-top: 1px solid var(--border); }
+.tool-gallery .shot { aspect-ratio: 8/5; }
+.tool-gallery .text-link { font-size: var(--caption); }
 .section-intro { max-width: 800px; color: var(--muted); margin-bottom: 36px; }
 .network-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding-top: 42px; margin-top: 42px; border-top: 1px solid var(--border); }
 .network-features .eyebrow { color: var(--muted); margin-bottom: 12px; }
@@ -210,6 +213,7 @@ dialog::backdrop { background: #101216ee; }
   .example-copy { max-width: 680px; }
 }
 @media (max-width: 850px) {
+  .tool-gallery { grid-template-columns: 1fr; }
   .hero-grid { grid-template-columns: 1fr; gap: 40px; }
   .hero-copy > p:not(.eyebrow) { max-width: 600px; }
   .hero-figure .shot { aspect-ratio: 16/9; }
@@ -239,6 +243,7 @@ dialog::backdrop { background: #101216ee; }
   .section-heading h2, .building > .wrap > h2 { padding: 14px 16px; }
   .gallery { gap: 36px; }
   .art-scroll-hint { display: block; margin-top: 8px; }
+  .art-tools { margin-top: 40px; padding-top: 36px; }
   .network-features { grid-template-columns: 1fr; gap: 28px; }
   .nim-highlights li { grid-template-columns: 98px 1fr; gap: 10px; }
   .tree-root { padding: 18px; }
