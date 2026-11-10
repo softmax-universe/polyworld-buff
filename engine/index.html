@@ -90,6 +90,25 @@ Run it locally, fix build or runtime errors, and launch the game for me to play,
           <p>Make each card count. Combine class abilities, targeting and timing in a tactical battle presented as a living 3D board.</p>
           <div class="game-actions"><a class="button primary" href="../AWM/">Explore the game ↗</a><a class="button primary" href="https://softmax.com/cards-and-casters" aria-label="Play Cards and Casters on Softmax">Play ↗</a></div>
         </article>
+        <article class="game-feature">
+          <div class="shot"><video data-game="paintbot" src="assets/games/paintbot.mp4" poster="assets/games/paintbot.jpg?v=video" width="1280" height="720" muted loop playsinline controls preload="metadata" aria-label="Paintbot: five-second gameplay clip"><a href="assets/games/paintbot.mp4">Watch the Paintbot gameplay clip</a></video></div>
+          <div class="game-heading"><h3>Paintbot</h3><span class="eyebrow">Twin-stick Shooter</span></div>
+          <p>Paint the island your color. Lead a crew of cogs, capture heart towers and coordinate attacks to turn territory into victory.</p>
+          <div class="game-actions"><a class="button primary" href="../Paintbot/">Explore the game ↗</a><a class="button primary" href="https://softmax.com/paintbot" aria-label="Play Paintbot on Softmax">Play ↗</a></div>
+        </article>
+        <!-- Restore Diplomacy when another game is added to the showcase. -->
+        <article class="game-feature" hidden>
+          <div class="shot"><video data-game="diplomacy" src="assets/games/diplomacy.mp4" poster="assets/games/diplomacy.jpg" width="1280" height="720" muted loop playsinline controls preload="metadata" aria-label="Diplomacy: a complete game in five seconds"><a href="assets/games/diplomacy.mp4">Watch the complete Diplomacy game in five seconds</a></video></div>
+          <div class="game-heading"><h3>Diplomacy</h3><span class="eyebrow">Turn-Based Strategy</span></div>
+          <p>Seven powers. One map. Negotiate alliances, command armies and fleets, and seize supply centers with simultaneous orders.</p>
+          <div class="game-actions"><a class="button primary" href="https://webdiplomacy.net/intro.php" aria-label="Explore the Diplomacy rules on webDiplomacy">Explore the rules ↗</a><a class="button primary" href="https://softmax.com/unlisted/mini-diplomacy" aria-label="Play Diplomacy on Softmax">Play ↗</a></div>
+        </article>
+        <article class="game-feature">
+          <div class="shot"><video data-game="cogs-vs-clips-pw" src="assets/games/cogs-vs-clips-pw.mp4?v=hud-half" poster="assets/games/cogs-vs-clips-pw.jpg?v=hud-half" width="1280" height="720" muted loop playsinline controls preload="metadata" aria-label="Cogs vs Clips PW: five-second gameplay clip"><a href="assets/games/cogs-vs-clips-pw.mp4?v=hud-half">Watch the Cogs vs Clips PW gameplay clip</a></video></div>
+          <div class="game-heading"><h3>Cogs vs Clips PW</h3><span class="eyebrow">RTS</span></div>
+          <p>Build your network. Hold your ground. Four teams of eight Cogs gather resources, equip specialist roles and capture junctions to claim territory.</p>
+          <div class="game-actions"><a class="button primary" href="https://github.com/softmax-universe/polyworld-cogs-vs-clips/blob/main/docs/rules.md" aria-label="Explore the Cogs vs Clips PW rules">Explore the rules ↗</a><a class="button primary" href="https://softmax.com/unlisted/cogs-vs-clips-pw" aria-label="Play Cogs vs Clips PW on Softmax">Play ↗</a></div>
+        </article>
         </div>
         <div class="gallery-footer"><a class="text-link" href="../">Browse all game guides ↗</a></div>
       </div>
@@ -261,21 +280,21 @@ Run it locally, fix build or runtime errors, and launch the game for me to play,
           </div>
         </div>
         <figure class="code-example">
-          <figcaption><span>collect.nim / 40 lines</span><a href="examples/collect.nim" download>Download example ↓</a></figcaption>
+          <figcaption><span>collect.nim</span><a href="examples/collect.nim" download>Download example ↓</a></figcaption>
           <pre tabindex="0" aria-label="40-line Nim game example"><code><span class="code-keyword">import</span> chroma, gltf, opengl, vmath, windy, polyworld/shapes
 
 <span class="code-keyword">let</span> window = newWindow(<span class="code-string">&quot;Arrow keys: collect gold&quot;</span>, ivec2(<span class="code-number">960</span>, <span class="code-number">640</span>))
 window.makeContextCurrent()
 loadExtensions()
 
-<span class="code-keyword">let</span> render = newRenderer(window)
 <span class="code-keyword">var</span>
+  render = newRenderer(window)
   batch = initShapeRenderer()
   player = vec3(<span class="code-number">0</span>)
   goal = vec3(<span class="code-number">2</span>, <span class="code-number">0</span>, <span class="code-number">2</span>)
   score = <span class="code-number">0&#x27;i32</span>
-<span class="code-keyword">let</span> camera = perspective(<span class="code-number">45&#x27;f</span>, <span class="code-number">1.5&#x27;f</span>, <span class="code-number">0.1&#x27;f</span>, <span class="code-number">50&#x27;f</span>) *
-  lookAt(vec3(<span class="code-number">8</span>, <span class="code-number">10</span>, <span class="code-number">8</span>), vec3(<span class="code-number">0</span>), vec3(<span class="code-number">0</span>, <span class="code-number">1</span>, <span class="code-number">0</span>))
+  camera = perspective(<span class="code-number">45&#x27;f</span>, <span class="code-number">1.5&#x27;f</span>, <span class="code-number">0.1&#x27;f</span>, <span class="code-number">50&#x27;f</span>) *
+    lookAt(vec3(<span class="code-number">8</span>, <span class="code-number">10</span>, <span class="code-number">8</span>), vec3(<span class="code-number">0</span>), vec3(<span class="code-number">0</span>, <span class="code-number">1</span>, <span class="code-number">0</span>))
 
 <span class="code-keyword">while</span> <span class="code-keyword">not</span> window.closeRequested:
   pollEvents()

@@ -1,0 +1,21 @@
+--- a/src/cvc/clients.nim
++++ b/src/cvc/clients.nim
+@@ -674,7 +674,7 @@
+   client.lastTime = now
+   when defined(showcase):
+     let canvas = client.window.size
+-    client.sk.uiScale = max(0.01'f, min(1'f, min(
++    client.sk.uiScale = 0.5'f * max(0.01'f, min(1'f, min(
+       canvas.x.float32 / 1440'f, canvas.y.float32 / 900'f
+     )))
+   else:
+@@ -829,5 +829,8 @@
+   client.renderer = newRenderer(client.sk, session.world)
+   client.director.observe(session.world)
+   if session.playback:
+-    client.scrubs = beginScrubs(session.tape)
++    when defined(capture):
++      client.scrubs = buildScrubs(session.tape)
++    else:
++      client.scrubs = beginScrubs(session.tape)
+   for i, cog in session.world.cogs:

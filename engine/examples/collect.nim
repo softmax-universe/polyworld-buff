@@ -4,14 +4,14 @@ let window = newWindow("Arrow keys: collect gold", ivec2(960, 640))
 window.makeContextCurrent()
 loadExtensions()
 
-let render = newRenderer(window)
 var
+  render = newRenderer(window)
   batch = initShapeRenderer()
   player = vec3(0)
   goal = vec3(2, 0, 2)
   score = 0'i32
-let camera = perspective(45'f, 1.5'f, 0.1'f, 50'f) *
-  lookAt(vec3(8, 10, 8), vec3(0), vec3(0, 1, 0))
+  camera = perspective(45'f, 1.5'f, 0.1'f, 50'f) *
+    lookAt(vec3(8, 10, 8), vec3(0), vec3(0, 1, 0))
 
 while not window.closeRequested:
   pollEvents()
